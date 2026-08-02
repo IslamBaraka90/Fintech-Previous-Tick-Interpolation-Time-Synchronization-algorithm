@@ -1,0 +1,29 @@
+{
+  "name": "fintech-previous-tick",
+  "version": "0.1.0",
+  "description": "Point-in-time-safe previous-tick interpolation with explicit staleness expiry, a live as-of engine, and revision-lookahead measurement.",
+  "keywords": [
+    "fintech",
+    "previous-tick",
+    "as-of-join",
+    "point-in-time",
+    "lookahead-bias",
+    "time-synchronization",
+    "market-data"
+  ],
+  "homepage": "https://github.com/IslamBaraka90/Fintech-Previous-Tick-Interpolation-Time-Synchronization-algorithm",
+  "license": "MIT",
+  "author": "The Fintech Builder",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": { ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" } },
+  "files": ["dist", "README.md", "LICENSE"],
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "node --experimental-strip-types --test \"test/*.test.ts\"",
+    "example": "node --experimental-strip-types examples/quickstart.ts"
+  },
+  "devDependencies": { "typescript": "^5.7.0" }
+}

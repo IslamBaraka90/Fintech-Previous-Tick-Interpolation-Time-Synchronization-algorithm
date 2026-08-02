@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+title: "Fintech Previous-Tick Interpolation — Time Synchronization Algorithm"
+message: "If you use this software, please cite it and the companion article."
+type: software
+authors:
+  - name: "The Fintech Builder"
+repository-code: "https://github.com/IslamBaraka90/Fintech-Previous-Tick-Interpolation-Time-Synchronization-algorithm"
+url: "https://thefintechbuilder.com/market-data-engineering/time-synchronization/previous-tick-interpolation/"
+keywords: [fintech, previous-tick, as-of-join, point-in-time, lookahead-bias, time-synchronization, market-data]
+license: MIT
+version: "0.1.0"

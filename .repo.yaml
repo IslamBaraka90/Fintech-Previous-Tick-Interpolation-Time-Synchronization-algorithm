@@ -1,0 +1,35 @@
+repo_slug: "Fintech-Previous-Tick-Interpolation-Time-Synchronization-algorithm"
+github: "IslamBaraka90/Fintech-Previous-Tick-Interpolation-Time-Synchronization-algorithm"
+visibility: "public"
+
+derives_from:
+  topic_id: "D01-F03-A01"
+  title: "Previous-Tick Interpolation"
+  domain_id: "D01"
+  domain: "Market Data Engineering"
+  family_id: "D01-F03"
+  family: "Time Synchronization"
+  source_path: "algorithms/domains/D01-market-data-engineering/D01-F03-time-synchronization/D01-F03-A01-previous-tick-interpolation"
+
+article_url: "https://thefintechbuilder.com/market-data-engineering/time-synchronization/previous-tick-interpolation/"
+languages: ["python", "typescript"]
+npm_subpath: "fintech-algorithms/market-data-engineering/time-synchronization/previous-tick-interpolation"
+
+# Split model: the reader keeps the teaching snippet; this repo owns the sampler plus
+# the STALENESS surface (revision_lookahead, staleness_budget_sweep,
+# staleness_profile, build_grid) and the streaming engine.
+#
+# The surface was chosen because the tutorial answers "what was the value" and leaves
+# the three questions that actually decide whether you may trust the series:
+#   - revision_lookahead     -> how much lookahead a revised-file backtest absorbs,
+#                               as a count and a magnitude rather than an argument
+#   - staleness_budget_sweep -> where max_staleness_ms should sit, read off a curve
+#   - staleness_profile      -> whether the series is sampled or largely invented
+#
+# UPSTREAM DIVERGENCE handled here, still present in the monorepo source and therefore
+# in the generated npm package: the tutorial TypeScript validates timestamps with
+# `Date.parse`, which rolls "2026-02-30" over to March 2, while the Python port's
+# `datetime.fromisoformat` rejects it — the same input, two answers. This repo parses
+# with explicit civil arithmetic in both languages and rejects it in both, with a test
+# that pins the JS rollover as proof.
+model: "split"

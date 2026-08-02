@@ -1,0 +1,30 @@
+{
+  "license": "CC0-1.0 synthetic",
+  "max_staleness_ms": 1500,
+  "observations": [
+    {"instrument":"A","event_time":"2026-01-02T14:30:00.100Z","available_time":"2026-01-02T14:30:00.180Z","revision":0,"value":100.0},
+    {"instrument":"A","event_time":"2026-01-02T14:30:00.100Z","available_time":"2026-01-02T14:30:01.400Z","revision":1,"value":99.8},
+    {"instrument":"A","event_time":"2026-01-02T14:30:02.200Z","available_time":"2026-01-02T14:30:02.260Z","revision":0,"value":100.4},
+    {"instrument":"B","event_time":"2026-01-02T14:30:00.700Z","available_time":"2026-01-02T14:30:01.200Z","revision":0,"value":50.0},
+    {"instrument":"B","event_time":"2026-01-02T14:30:01.900Z","available_time":"2026-01-02T14:30:01.950Z","revision":0,"value":50.2}
+  ],
+  "requests": [
+    {"grid_time":"2026-01-02T14:30:00.000Z","query_time":"2026-01-02T14:30:00.000Z"},
+    {"grid_time":"2026-01-02T14:30:01.000Z","query_time":"2026-01-02T14:30:01.000Z"},
+    {"grid_time":"2026-01-02T14:30:01.000Z","query_time":"2026-01-02T14:30:02.000Z"},
+    {"grid_time":"2026-01-02T14:30:02.000Z","query_time":"2026-01-02T14:30:02.000Z"},
+    {"grid_time":"2026-01-02T14:30:03.000Z","query_time":"2026-01-02T14:30:03.000Z"}
+  ],
+  "expected": [
+    {"instrument":"A","grid_time":"2026-01-02T14:30:00.000Z","query_time":"2026-01-02T14:30:00.000Z","value":null,"source_event_time":null,"source_available_time":null,"source_revision":null,"staleness_ms":null,"status":"no_history"},
+    {"instrument":"A","grid_time":"2026-01-02T14:30:01.000Z","query_time":"2026-01-02T14:30:01.000Z","value":100.0,"source_event_time":"2026-01-02T14:30:00.100Z","source_available_time":"2026-01-02T14:30:00.180Z","source_revision":0,"staleness_ms":900,"status":"carried"},
+    {"instrument":"A","grid_time":"2026-01-02T14:30:01.000Z","query_time":"2026-01-02T14:30:02.000Z","value":99.8,"source_event_time":"2026-01-02T14:30:00.100Z","source_available_time":"2026-01-02T14:30:01.400Z","source_revision":1,"staleness_ms":900,"status":"carried"},
+    {"instrument":"A","grid_time":"2026-01-02T14:30:02.000Z","query_time":"2026-01-02T14:30:02.000Z","value":null,"source_event_time":"2026-01-02T14:30:00.100Z","source_available_time":"2026-01-02T14:30:01.400Z","source_revision":1,"staleness_ms":1900,"status":"stale"},
+    {"instrument":"A","grid_time":"2026-01-02T14:30:03.000Z","query_time":"2026-01-02T14:30:03.000Z","value":100.4,"source_event_time":"2026-01-02T14:30:02.200Z","source_available_time":"2026-01-02T14:30:02.260Z","source_revision":0,"staleness_ms":800,"status":"carried"},
+    {"instrument":"B","grid_time":"2026-01-02T14:30:00.000Z","query_time":"2026-01-02T14:30:00.000Z","value":null,"source_event_time":null,"source_available_time":null,"source_revision":null,"staleness_ms":null,"status":"no_history"},
+    {"instrument":"B","grid_time":"2026-01-02T14:30:01.000Z","query_time":"2026-01-02T14:30:01.000Z","value":null,"source_event_time":null,"source_available_time":null,"source_revision":null,"staleness_ms":null,"status":"not_yet_available"},
+    {"instrument":"B","grid_time":"2026-01-02T14:30:01.000Z","query_time":"2026-01-02T14:30:02.000Z","value":50.0,"source_event_time":"2026-01-02T14:30:00.700Z","source_available_time":"2026-01-02T14:30:01.200Z","source_revision":0,"staleness_ms":300,"status":"carried"},
+    {"instrument":"B","grid_time":"2026-01-02T14:30:02.000Z","query_time":"2026-01-02T14:30:02.000Z","value":50.2,"source_event_time":"2026-01-02T14:30:01.900Z","source_available_time":"2026-01-02T14:30:01.950Z","source_revision":0,"staleness_ms":100,"status":"carried"},
+    {"instrument":"B","grid_time":"2026-01-02T14:30:03.000Z","query_time":"2026-01-02T14:30:03.000Z","value":50.2,"source_event_time":"2026-01-02T14:30:01.900Z","source_available_time":"2026-01-02T14:30:01.950Z","source_revision":0,"staleness_ms":1100,"status":"carried"}
+  ]
+}
