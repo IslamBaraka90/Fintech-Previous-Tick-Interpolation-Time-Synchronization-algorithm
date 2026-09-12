@@ -6,7 +6,6 @@ build-backend = "setuptools.build_meta"
 name = "fintech-previous-tick"
 version = "0.1.0"
 description = "Point-in-time-safe previous-tick interpolation with explicit staleness expiry, a live as-of engine, and revision-lookahead measurement."
-readme = "../README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }
 authors = [{ name = "The Fintech Builder" }]
